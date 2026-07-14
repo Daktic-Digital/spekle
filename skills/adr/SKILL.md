@@ -10,6 +10,13 @@ are disposable; the decisions extracted from them are what's worth keeping.
 Your job is to notice decisions, draft them in the standard format, keep the
 index current, and consult past ADRs before proposing changes that touch them.
 
+The disposable half of the workflow — local, untracked Technical Design Docs
+that drive implementation and reference the ADRs they implement — is covered
+by the companion `tdd` skill. If content is a decision with alternatives and
+tradeoffs, it belongs here; if it's a build plan, it belongs in a TDD; if
+it's a constraint a future reader of the code needs, it belongs in an inline
+comment.
+
 ## Where ADRs live
 
 Default location: `docs/adr/NNNN-short-slug.md` with the index at
@@ -38,7 +45,15 @@ it is?" If no, skip it — zero ceremony is the point.
 
 ## How to write one
 
-Use [template.md](template.md). Hard rules:
+Use [template.md](template.md). Formatting follows
+[spec-kit](https://github.com/github/spec-kit) conventions (adopted, not
+forked): a doc-type-prefixed title (`# Architecture Decision Record: <title>`),
+bold pipe-separated metadata directly under it
+(`**ID**: NNNN | **Created**: YYYY-MM-DD | **Status**: ...`), sections marked
+`*(mandatory)*`, and `[NEEDS CLARIFICATION: specific question]` markers
+instead of silently guessing at unresolved points.
+
+Hard rules:
 
 - **One page maximum.** ADRs die when they get long. Cut background the
   reader can get from the code.
@@ -57,9 +72,9 @@ Statuses: `Proposed` → `Accepted` → `Superseded by [NNNN](NNNN-slug.md)` (or
 
 Never edit the substance of an accepted ADR. If a decision changes, write a
 new ADR that states what it supersedes and why the context changed, then
-update only the old ADR's status line to link forward. Typo fixes are fine;
-rewriting history is not — the record of what was believed at the time is the
-value.
+update only the old ADR's `Status` field to link forward. Typo fixes are
+fine; rewriting history is not — the record of what was believed at the time
+is the value.
 
 ## Workflow
 
