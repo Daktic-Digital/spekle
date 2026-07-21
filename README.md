@@ -1,8 +1,14 @@
-# claude-adr
+# Spekle
 
-A Claude Code plugin that makes Architecture Decision Records the durable
-artifact of development: decisions get recorded as they happen, everything
-else (specs, plans, briefs) stays disposable — and gets a disposal path.
+Lightweight spec-driven development scaffolding that brings Architecture
+Decision Records to the forefront and uses TDDs as guiding, ephemeral
+implementation artifacts. **Code is law**: decisions are preserved as durable
+records while guiding technical artifacts do their job at write time, then get
+disposed of before they can rot as the code changes.
+
+Spekle makes ADRs the durable artifact of development: decisions get recorded
+as they happen, everything else (specs, plans, briefs) stays disposable — and
+gets a disposal path.
 
 The premise: per-feature design docs decay the moment the feature ships, and
 forcing every change through spec ceremony raises the "what size problem is
@@ -58,7 +64,7 @@ inverts (see [ADR 0004](docs/adr/0004-adopt-spec-kit-formatting-conventions.md))
 
 ```sh
 claude plugin marketplace add daktic-digital/dd-claude-plugins
-claude plugin install adr@daktic-digital
+claude plugin install spekle@daktic-digital
 ```
 
 ## Development

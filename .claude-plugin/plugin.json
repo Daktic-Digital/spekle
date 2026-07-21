@@ -1,10 +1,10 @@
 {
-  "name": "adr",
-  "description": "Architecture Decision Records as the durable artifact of development: drafts ADRs when sessions produce decisions, maintains the index, enforces supersede-don't-edit, and drives implementation through local untracked TDDs that are extracted and discarded",
+  "name": "spekle",
+  "description": "Lightweight spec-driven development scaffolding that brings Architecture Decision Records to the forefront and uses TDDs as guiding, ephemeral implementation artifacts: drafts ADRs when sessions produce decisions, maintains the index, enforces supersede-don't-edit, and drives implementation through local untracked TDDs that are extracted and discarded",
   "version": "0.2.0",
   "author": {
     "name": "Daktic Digital",
     "email": "gberg@dakticdigital.com"
   },
-  "keywords": ["adr", "architecture", "decisions", "documentation", "tdd", "design-docs"]
+  "keywords": ["spekle", "adr", "architecture", "decisions", "documentation", "tdd", "design-docs", "spec-driven"]
 }
