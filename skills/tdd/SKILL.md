@@ -50,6 +50,10 @@ checkpoints. Hard rules:
   the `**Status**:` field — `/adr-clean` uses it to decide what's safe to
   delete and will never touch a TDD it can't classify.
 - Keep it operational: steps, touchpoints, risks. Rationale lives in ADRs.
+- **Testing Strategy is expected, not optional.** Include it by default —
+  skip it only when no new logic is being introduced (pure config, docs, a
+  mechanical rename) or testing is genuinely not applicable, not merely
+  inconvenient.
 
 ## Lifecycle
 
