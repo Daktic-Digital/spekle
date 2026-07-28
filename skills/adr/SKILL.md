@@ -49,19 +49,31 @@ Use [template.md](template.md). Formatting follows
 [spec-kit](https://github.com/github/spec-kit) conventions (adopted, not
 forked): a doc-type-prefixed title (`# Architecture Decision Record: <title>`),
 bold pipe-separated metadata directly under it
-(`**ID**: NNNN | **Created**: YYYY-MM-DD | **Status**: ...`), sections marked
-`*(mandatory)*`, and `[NEEDS CLARIFICATION: specific question]` markers
-instead of silently guessing at unresolved points.
+(`**ID**: NNNN | **Created**: YYYY-MM-DD | **Status**: ...`), a
+**Related ADRs** line naming how this decision connects to others (builds
+on, constrained by, supersedes, overlaps with — or "None"), and
+`[NEEDS CLARIFICATION: specific question]` markers instead of silently
+guessing at unresolved points. All four top-level sections are required —
+there's no optional section, so none are marked `*(mandatory)*`.
+
+Section shape: Context opens with a **Problem Statement** (the forcing
+situation, facts not judgments) and **Decision Drivers** (the constraints
+that narrow the field). **Considered Options** lists each option with both
+why it was worth evaluating and why it was rejected. **Decision** states the
+outcome in plain prose and closes with an **Outcome** subsection naming the
+chosen option and the one-line reason it won. **Consequences** is grouped
+into **Good**, **Neutral**, and **Bad** — not a single undifferentiated
+paragraph.
 
 Hard rules:
 
 - **One page maximum.** ADRs die when they get long. Cut background the
   reader can get from the code.
-- **Consequences include the bad ones.** An ADR listing only upsides is
-  advocacy, not a record. Name what got harder or was given up.
-- **Alternatives get one line each** — what it was and the deciding reason
-  against it. If an alternative deserves more, that argues for its own
-  rejected-status ADR.
+- **Consequences include the bad ones.** An ADR with nothing under Bad is
+  advocacy, not a record.
+- **Considered Options get two reasons each** — why it was considered and
+  why it was rejected, one line apiece. If an option deserves more, that
+  argues for its own rejected-status ADR.
 - Plain declarative prose. Write "We will use X" not "It was decided that X
   might be used."
 

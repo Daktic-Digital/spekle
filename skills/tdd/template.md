@@ -19,6 +19,15 @@
 [The implementation approach as ordered, checkable steps. Files and
 interfaces to touch, sequencing, and how to know each step worked.]
 
+## Testing Strategy
+
+[Best practice: include this. Describe how the new logic will be tested —
+unit/integration coverage, how to approach something inherently hard to
+test (async, external services, concurrency), or a coverage target. Skip
+this section only when no new logic is being introduced (pure config, docs,
+or a mechanical rename) or testing is genuinely not applicable — not merely
+inconvenient.]
+
 ## Edge Cases & Risks
 
 [What could go wrong, what inputs are weird, what existing behavior must not
