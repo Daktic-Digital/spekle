@@ -1,7 +1,7 @@
 {
   "name": "spekle",
   "description": "Lightweight spec-driven development scaffolding that brings Architecture Decision Records to the forefront and uses TDDs as guiding, ephemeral implementation artifacts: drafts ADRs when sessions produce decisions, maintains the index, enforces supersede-don't-edit, and drives implementation through local untracked TDDs that are extracted and discarded",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": {
     "name": "Daktic Digital",
     "email": "gberg@dakticdigital.com"

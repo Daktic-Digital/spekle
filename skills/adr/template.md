@@ -1,12 +1,18 @@
 # Architecture Decision Record: [Title stating the decision as a fact, e.g. "Use Postgres for persistence"]
 
-**ID**: NNNN | **Created**: YYYY-MM-DD | **Status**: Proposed
-**Related ADRs**: [None, or [NNNN](NNNN-slug.md) — say how: builds on,
-constrained by, supersedes, overlaps with]
+| Field | Value |
+|---|---|
+| **ID** | NNNN |
+| **Created** | YYYY-MM-DD |
+| **Status** | Proposed |
+| **Related ADRs** | None |
 
 <!--
   Status is exactly one of: Proposed | Accepted | Rejected |
   Superseded by [NNNN](NNNN-slug.md).
+  Related ADRs is link(s) only — [NNNN](NNNN-slug.md), comma-separated for
+  more than one, or "None". Say how it relates (builds on, constrained by,
+  supersedes, overlaps with) in prose in Context or Decision, not here.
   Never edit an accepted ADR's substance — supersede it. Only the Status
   field may change after acceptance.
 -->

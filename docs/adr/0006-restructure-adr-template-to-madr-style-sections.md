@@ -1,9 +1,11 @@
 # Architecture Decision Record: Restructure the ADR template to MADR-style sections
 
-**ID**: 0006 | **Created**: 2026-07-28 | **Status**: Accepted
-**Related ADRs**: [0004](0004-adopt-spec-kit-formatting-conventions.md) —
-builds on it for title/metadata/NEEDS CLARIFICATION conventions, narrows it
-by dropping the `*(mandatory)*` markers it introduced
+| Field | Value |
+|---|---|
+| **ID** | 0006 |
+| **Created** | 2026-07-28 |
+| **Status** | Accepted |
+| **Related ADRs** | [0004](0004-adopt-spec-kit-formatting-conventions.md) |
 
 ## Context
 

@@ -47,11 +47,12 @@ it is?" If no, skip it — zero ceremony is the point.
 
 Use [template.md](template.md). Formatting follows
 [spec-kit](https://github.com/github/spec-kit) conventions (adopted, not
-forked): a doc-type-prefixed title (`# Architecture Decision Record: <title>`),
-bold pipe-separated metadata directly under it
-(`**ID**: NNNN | **Created**: YYYY-MM-DD | **Status**: ...`), a
-**Related ADRs** line naming how this decision connects to others (builds
-on, constrained by, supersedes, overlaps with — or "None"), and
+forked): a doc-type-prefixed title (`# Architecture Decision Record: <title>`)
+followed by a two-column `Field | Value` metadata table (ID, Created, Status,
+Related ADRs). **Related ADRs** holds link(s) only —
+`[NNNN](NNNN-slug.md)`, comma-separated for more than one, or `None` — how
+it relates (builds on, constrained by, supersedes, overlaps with) belongs in
+prose in Context or Decision, not the header. Use
 `[NEEDS CLARIFICATION: specific question]` markers instead of silently
 guessing at unresolved points. All four top-level sections are required —
 there's no optional section, so none are marked `*(mandatory)*`.
