@@ -13,10 +13,15 @@ comments at the point of use. The TDD itself is scaffolding.
 
 ## Where TDDs live
 
-`docs/tdd/<short-slug>.md`, excluded from git via `.git/info/exclude` (add a
-`docs/tdd/` line if missing). Never add the exclusion to `.gitignore` — the
-whole point is that TDDs leave no trace in the repository, including in its
-ignore rules. Before writing the first TDD, verify the exclusion is in place.
+`docs/tdd/NN-short-slug.md` — zero-padded two-digit sequence number
+(01–99, e.g. `01-rate-limiting.md`). The two-digit cap is intentional: it
+signals ephemerality and makes TDDs visually distinct from ADRs (four-digit).
+Hitting 99 is a loud signal that cleanup discipline has collapsed. Excluded from
+git via `.git/info/exclude` (add a `docs/tdd/` line if missing). Never add the
+exclusion to `.gitignore` — the whole point is that TDDs leave no trace in the
+repository, including in its ignore rules. Before writing the first TDD, verify
+the exclusion is in place. The next ID is derived by listing existing TDD files
+and incrementing.
 
 ## Division of labor
 
@@ -36,16 +41,18 @@ TDD reference it.
 
 Use [template.md](template.md). Formatting follows
 [spec-kit](https://github.com/github/spec-kit) conventions (adopted, not
-forked): a doc-type-prefixed title (`# Technical Design Doc: <title>`), bold
-pipe-separated metadata directly under it, `*(mandatory)*` section markers,
+forked): a doc-type-prefixed title (`# Technical Design Doc: <title>`), a
+metadata table directly under it (ID, Created, Status, Implements — matching
+ADR table style), `*(mandatory)*` section markers,
 `[NEEDS CLARIFICATION: ...]` for unresolved points, and explicit `*GATE:*`
 checkpoints. Hard rules:
 
-- **No orphan TDDs — this is a gate, not a suggestion.** The `**Implements**:`
-  line must reference at least one ADR before the file is created. Every TDD
-  exists to implement recorded decisions; if the work has no ADR, record the
+- **No orphan TDDs — this is a gate, not a suggestion.** The `Implements ADRs`
+  table row must reference at least one ADR before the file is created. Every
+  TDD exists to implement recorded decisions; if the work has no ADR, record the
   decision first (that's what `/create-adr` is for), then create the TDD. A
   TDD you can't tie to a decision is a signal the work doesn't need a TDD.
+  `Related TDDs` is optional and defaults to `None` — it is never gated.
 - **Status is machine-checkable.** Exactly one of `In-flight` or `Shipped` in
   the `**Status**:` field — `/adr-clean` uses it to decide what's safe to
   delete and will never touch a TDD it can't classify.

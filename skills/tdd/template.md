@@ -1,8 +1,12 @@
 # Technical Design Doc: [Title naming the work being built, e.g. "Wire rate limiting into the API gateway"]
 
-**Created**: YYYY-MM-DD | **Status**: In-flight
-
-**Implements**: [NNNN](../adr/NNNN-slug.md), [NNNN](../adr/NNNN-slug.md)
+| Field | Value |
+|---|---|
+| **ID** | NN |
+| **Created** | YYYY-MM-DD |
+| **Status** | In-flight |
+| **Implements ADRs** | [NNNN](../adr/NNNN-slug.md) |
+| **Related TDDs** | None |
 
 <!--
   GATE: Implements must list at least one ADR — orphan TDDs are not allowed.
