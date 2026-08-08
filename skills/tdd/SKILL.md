@@ -41,11 +41,11 @@ TDD reference it.
 
 Use [template.md](template.md). Formatting follows
 [spec-kit](https://github.com/github/spec-kit) conventions (adopted, not
-forked): a doc-type-prefixed title (`# Technical Design Doc: <title>`), a
-metadata table directly under it (ID, Created, Status, Implements — matching
-ADR table style), `*(mandatory)*` section markers,
-`[NEEDS CLARIFICATION: ...]` for unresolved points, and explicit `*GATE:*`
-checkpoints. Hard rules:
+forked) with the per-step Plan structure from ADR 0007: a doc-type-prefixed
+title (`# Technical Design Doc: <title>`), a metadata table directly under it
+(ID, Created, Status, Scope, Implements, Related TDDs — matching ADR table
+style), `*(mandatory)*` section markers, `[NEEDS CLARIFICATION: ...]` for
+unresolved points, and explicit `*GATE:*` checkpoints. Hard rules:
 
 - **No orphan TDDs — this is a gate, not a suggestion.** The `Implements ADRs`
   table row must reference at least one ADR before the file is created. Every
@@ -56,6 +56,15 @@ checkpoints. Hard rules:
 - **Status is machine-checkable.** Exactly one of `In-flight` or `Shipped` in
   the `**Status**:` field — `/adr-clean` uses it to decide what's safe to
   delete and will never touch a TDD it can't classify.
+- **Plan is per-step subsections, not prose.** Each step is a `### Step N —
+  <verb phrase>` block containing a **Touchpoints** table (`File | Symbol/Section |
+  Action`), a fenced code block for any new/changed signature, schema, or
+  config, and a one-line **Verify** note. Prose rationale is at most one
+  sentence per step — link the ADR for *why*, use the step body for *what*.
+- **Scope names one area of concern.** If the Plan grows past ~5 steps or
+  the steps target unrelated subsystems, split into multiple TDDs and
+  cross-link them under `Related TDDs`. A TDD trying to cover two concerns
+  is two TDDs pretending to be one.
 - Keep it operational: steps, touchpoints, risks. Rationale lives in ADRs.
 - **Testing Strategy is expected, not optional.** Include it by default —
   skip it only when no new logic is being introduced (pure config, docs, a
@@ -69,7 +78,11 @@ checkpoints. Hard rules:
    history worth preserving.
 3. New decisions surfaced by the work get recorded as ADRs immediately and
    added to the TDD's references.
-4. When the work ships: complete the extraction checklist, flip status to
-   `Shipped`.
-5. `/adr-clean` deletes `Shipped` TDDs whose extraction checklist is
+4. **When the last implementation step lands and no work remains: complete
+   the Extraction Checklist and flip `**Status**` from `In-flight` to
+   `Shipped` in the same turn.** An `In-flight` TDD with no remaining work
+   is a bug in the workflow — `/adr-clean` cannot delete it, and it
+   accumulates silently, defeating the disposable-TDD model. Tell the user
+   the TDD is ready for `/adr-clean` when you flip it.
+5. `/adr-clean` deletes `Shipped` TDDs whose Extraction Checklist is
    complete. In-flight TDDs are never deleted.
