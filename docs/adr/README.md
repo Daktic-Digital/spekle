@@ -8,3 +8,4 @@
 - [0006](0006-restructure-adr-template-to-madr-style-sections.md) — Restructure the ADR template to MADR-style sections (Accepted)
 - [0007](0007-restructure-tdds-for-scannable-single-concern-plans.md) — Restructure TDDs to favor scannable, single-concern implementation blocks over prose (Accepted)
 - [0008](0008-adr-sweep-reconciles-tdd-and-proposed-adr-status.md) — Add /adr-sweep to reconcile TDD and Proposed ADR status between verify and clean (Accepted)
+- [0009](0009-extend-the-artifact-toolset-beyond-adrs-and-tdds.md) — Extend the artifact toolset beyond ADRs and TDDs (Proposed)
